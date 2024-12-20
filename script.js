@@ -308,3 +308,17 @@ function task727(posts) {
 }
 task727(posts);
 // 7.29. Į konsolę išvesti tik tuos masyvo narius, kurių pavadinimas turi daugiau nei 3 "a" raides, o "body" turi mažiau nei 7 "o" raides.
+function task729(postsData) {
+  let filteredPosts = postsData.filter((post) => {
+    let titleLetters = post.title.split("a").length - 1;
+    let bodyLetters = post.body.split("o").length - 1;
+
+    return titleLetters > 3 && bodyLetters < 7;
+  });
+
+  filteredPosts.map((post) => {
+    console.log(`Title: "${post.title}". Content: "${post.body}".`);
+  });
+}
+
+task729(posts);
